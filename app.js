@@ -2,6 +2,7 @@ const passLength = document.querySelector(".rana");
 const button = document.querySelector(".generate-pass");
 const slider = document.querySelectorAll(".slider");
 const securePas = document.querySelector("#outcome");
+const apple = "apple";
 const characters = [
   "A",
   "B",

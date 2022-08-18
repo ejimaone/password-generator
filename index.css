@@ -1,0 +1,126 @@
+body {
+  margin-top: 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(189, 24, 24);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #21f380;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #21f380;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.display-pass {
+  display: flex;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  justify-content: space-between;
+  /* margin-top: 25%; */
+
+  /* margin-left: 35%;
+  margin-right: 25%; */
+  align-items: center;
+  margin-top: 10px;
+  padding-right: 15px;
+  height: 50px;
+  width: 300px;
+  background-color: rgb(60, 66, 101);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 21px;
+}
+.generate-pass {
+  margin-top: 20px;
+  background-color: rgb(128, 117, 229);
+  color: white;
+  justify-content: center;
+  width: 338px;
+  font-size: x-large;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  border: none;
+  cursor: pointer;
+}
+.phone {
+  background-color: rgb(15, 21, 56);
+  /* display: inline-block; */
+  margin: auto;
+  width: fit-content;
+  border: 3px;
+  padding: 10px;
+  padding-bottom: 40px;
+  border-radius: 18px;
+}
+
+input {
+  text-align: center;
+  margin-bottom: 16px;
+}
+::placeholder {
+  color: white;
+}
+
+.rana {
+  font-size: 20px;
+  height: 25px;
+  margin-left: 53px;
+}
+span {
+  color: #21f380;
+  font-weight: bold;
+}
+h1 {
+  color: white;
+
+  padding-left: 8px;
+}
+.container {
+  padding-left: 30px;
+}

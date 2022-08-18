@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="phone">
+      <h1>PASSWORD GENERATOR</h1>
+      <div class="container">
+        <div class="input">
+          <input type="text" class="display-pass " id="outcome" placeholder="Your Secure Password" disabled > 
+        </div>
+        <div class=" range">
+         <span>Select Password Length (5 - 20)</span> <input type="number" min="5" max="20"  class="rana">
+
+        </div>
+        <div class="display-pass">
+          <p>Inlcude Uppercase</p>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round upper"></span>
+          </label>
+        </div>
+        <div >
+          <div class="display-pass">
+            <p>Inlcude Lowercase</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round lower"></span>
+            </label>
+          </div>
+          <div >
+            <div class="display-pass">
+              <p>Inlcude Numbers</p>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round num"></span>
+              </label>
+            </div>
+            <div >
+              <div class="display-pass">
+                <p>Include Symbols</p>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round sym"></span>
+                </label>
+              </div>
+              
+             
+              <button class="display-pass  generate-pass">GENERATE PASSWORD</button>
+            </div>
+          </div>
+          </body>
+          </html>

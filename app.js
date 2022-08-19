@@ -96,11 +96,9 @@ const characters = [
   "?",
   "/",
 ];
-
-const alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
 let outcome;
 const empty = [];
-const password = [];
+let password = [];
 const randomIndex = function (length) {
   return Math.floor(Math.random() * length);
 };
@@ -113,60 +111,94 @@ slider.forEach(function (slide) {
   slide.addEventListener("click", function (e) {
     if (e.target.classList.contains("upper")) {
       if (sliderUpper) {
+        empty.forEach(function (emt) {
+          emt.find(function (letter) {
+            if (letter === "A") {
+              const index = empty.indexOf(emt);
+              empty.splice(index, 1);
+            }
+          });
+        });
         sliderUpper = false;
       } else {
         sliderUpper = true;
+        empty.push(characters.slice(0, 26));
       }
     }
     if (e.target.classList.contains("lower")) {
       if (sliderLower) {
+        empty.forEach(function (emt) {
+          emt.find(function (letter) {
+            if (letter === "a") {
+              const index = empty.indexOf(emt);
+              empty.splice(index, 1);
+            }
+          });
+        });
         sliderLower = false;
       } else {
         sliderLower = true;
+        empty.push(characters.slice(26, 52));
       }
     }
     if (e.target.classList.contains("num")) {
       if (sliderNum) {
+        empty.forEach(function (emt) {
+          emt.find(function (letter) {
+            if (letter === "5") {
+              const index = empty.indexOf(emt);
+              empty.splice(index, 1);
+            }
+          });
+        });
         sliderNum = false;
-      } else sliderNum = true;
+      } else {
+        sliderNum = true;
+        empty.push(characters.slice(52, 62));
+      }
     }
     if (e.target.classList.contains("sym")) {
       if (sliderSym) {
+        empty.forEach(function (emt) {
+          emt.find(function (letter) {
+            if (letter === "]") {
+              const index = empty.indexOf(emt);
+              empty.splice(index, 1);
+
+              // console.log(empty.indexOf(emt));
+            }
+          });
+        });
         sliderSym = false;
-      } else sliderSym = true;
+      } else {
+        sliderSym = true;
+        empty.push(characters.slice(62));
+      }
     }
   });
 });
 
 button.addEventListener("click", function () {
-  if (Number(passLength.value) < 5 || Number(passLength.value) > 20) return;
+  if (Number(passLength.value) < 5 || Number(passLength.value) > 20) {
+    securePas.value = "Select Length or option";
+    securePas.style.color = "red";
+  }
   if (passLength.value >= 5 || passLength.value <= 20) {
-    // console.log(sliderUpper);
-    // console.log(sliderLower);
-    // console.log(sliderNum);
-    // console.log(sliderSym);
-    if (sliderUpper) empty.push(characters.slice(0, 26));
-    if (sliderLower) empty.push(characters.slice(26, 52));
-    if (sliderNum) empty.push(characters.slice(52, 62));
-    if (sliderSym) empty.push(characters.slice(62));
+    securePas.value = "Select Length or option";
+    securePas.style.color = "red";
 
     outcome = empty.flat();
-    if (sliderUpper || sliderLower || sliderNum || sliderSym) {
+    if (
+      (sliderUpper || sliderLower || sliderNum || sliderSym) &&
+      passLength.value
+    ) {
       for (let i = 0; i < passLength.value; i++) {
         password.push(outcome[randomIndex(outcome.length)]);
       }
       let passcode = password.join("");
       securePas.style.backgroundColor = "green";
       securePas.value = passcode;
-      button.textContent = "RESET OPTIONS";
-
-      if (button.textContent === "RESET OPTIONS") {
-        button.addEventListener("click", (reset) => {
-          button.textContent = "GENERATE PASSWORD";
-          securePas.value = "";
-          location.reload();
-        });
-      }
+      password = [];
     }
   }
 });

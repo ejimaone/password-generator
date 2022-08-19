@@ -182,6 +182,7 @@ button.addEventListener("click", function () {
   if (Number(passLength.value) < 5 || Number(passLength.value) > 20) {
     securePas.value = "Select Length or option";
     securePas.style.color = "red";
+    return;
   }
   if (passLength.value >= 5 || passLength.value <= 20) {
     // securePas.value = "Select Length or option";

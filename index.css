@@ -109,7 +109,7 @@ input {
 .rana {
   font-size: 20px;
   height: 25px;
-  margin-left: 53px;
+  margin-top: 10px;
 }
 span {
   color: #21f380;
@@ -122,4 +122,11 @@ h1 {
 }
 .container {
   padding-left: 30px;
+}
+.range {
+  display: flex;
+  width: 335px;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 50px;
 }
